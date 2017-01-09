@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Musikkbutikk</title>
+
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="Musikkstudio.jpg"></script>
+    <script src="Konsert.png"></script>
+
+    <style>
+
+        body {
+            background-color: #333333;
+        }
+        .container {
+            max-width: 970px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            height: 200px;
+            width: 970px;
+            text-align: center;
+            position: fixed;
+            background-color: #424142;
+            z-index: 1;
+
+        }
+
+        nav > a.logo {
+            width: 10%;
+            height: 25%;
+            padding: 0;
+            top: 20%;
+            position: absolute;
+            float: left;
+        }
+        .box {
+            height: 50%;
+            width: 378px;
+            background-color: #4e4e4f;
+            left: 298px;
+            position: absolute;
+            float: left;
+            top: 37px;
+        }
+        .box h1 {
+            text-align: center;
+        }
+        nav {
+            width: 126px;
+            height: 41px;
+        }
+        nav > a {
+            width: 126px;
+            height: 41px;
+            transition: 250ms;
+        }
+        nav > a.kontakt {
+            background-image: url("Kontakt oss omriss.png");
+            position: absolute;
+            width: 126px;
+            height:41px;
+            left: 424px;
+            top: 135px;
+        }
+        nav > a.kontakt:hover {
+            background-image:url("Kontakt oss fylt.png");
+            position: absolute;
+            width: 126px;
+            height:41px;
+            left: 424px;
+            top: 135px;
+        }
+        nav > a.produkter {
+            background-image: url("Produkter omriss.png");
+            position: absolute;
+            width: 126px;
+            height: 41px;
+            left: 298px;
+            top: 135px;
+        }
+        nav > a.produkter:hover {
+            background-image: url("Produkter fylt.png");
+            position: absolute;
+            width: 126px;
+            height: 41px;
+            left: 298px;
+            top: 135px;
+        }
+        nav > a.støtte {
+            background-image: url("Teknisk støtte omriss.png");
+            position: absolute;
+            width: 126px;
+            height: 41px;
+            left: 550px;
+            top: 135px;
+        }
+        nav > a.støtte:hover {
+            background-image: url("Teknisk støtte fylt.png");
+            position: absolute;
+            width: 126px;
+            height: 41px;
+            left: 550px;
+            top: 135px;
+        }
+
+        nav > a.sonos {
+            background-image: url("sonos200.png");
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            margin-left: 61px;
+            z-index: 0;
+        }
+        nav > a.yamaha {
+            background-image: url("yamaha.png");
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            margin-left: 61px;
+            z-index: 0;
+        }
+        nav > a.bang {
+            background-image: url("bang olufsen.png");
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            margin-left: 61px;
+            z-index: 0;
+        }
+
+        h1 {
+            color: #5588c7;
+            padding: 30px;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            height: 1500px;
+            width: 970px;
+            background-color: #414042;
+        }
+
+        .parallax-bg {
+            padding: 300px 0;
+            background: url("Musikkstudio.jpg") 0;
+            transition: all 0.1s ease;
+            background-size: 1700px;
+            background-attachment: fixed;
+        }
+
+        .parallax-bg h1{
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 70px;
+            color: white;
+
+        }
+        .footer {
+            background-color: #333333;
+            width: 970px;
+            height: 200px;
+            color: white;
+            text-align: center;
+        }
+        a:link {
+            color: #5588c7;
+        }
+        a:hover {
+            color: white;
+        }
+        a:visited {
+            color: darkgrey;
+        }
+        .featured {
+            width: 970px;
+            height: 500px;
+            color: #5588c7;
+            border: #5488c7;
+            align-items: stretch;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+        .content {
+            background-color: #333333;
+            height: 1200px;
+        }
+        .featuredbox1 {
+            width: 323px;
+            height: 600px;
+            background-color: #4e4e4f;
+            border: #5488c7;
+            float: left;
+
+        }
+        .featuredbox2 {
+            width: 323px;
+            height: 600px;
+            background-color: #333333;
+            border: #5488c7;
+            float: left;
+        }
+        .featuredbox3 {
+            width: 323px;
+            height: 600px;
+            background-color: #4e4e4f;
+            border: #5488c7;
+            float: left;
+        }
+        .featuredbox2 h3 {
+            margin-bottom: 20px;
+        }
+        .featuredbox3 h3{
+            margin-bottom: 60px;
+        }
+        .featured h2 {
+            color: white;
+            text-align: center;
+            padding-top: 20px;
+        }
+        .featured h3 {
+            padding: 20px;
+            color: white;
+        }
+        .parallax-bg2 {
+            padding: 300px;
+            background: url("Konsert.png") 0;
+            background-size: cover;
+            transition: all 0.1s ease;
+            background-attachment: fixed;
+            height: 180px;
+        }
+        .info {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #4e4e4f;
+            height: 400px;
+
+        }
+        .info h1 {
+            text-align: center;
+            color: white;
+        }
+        .info h2 {
+            color: white;
+            text-align: left;
+        }
+        .garanti {
+            color: white;
+            font-size: 21px;
+            font-weight: 900;
+            text-align: center;
+            text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+        }
+
+
+        @media only screen and (max-width : 480px) {
+            main {
+                max-width: 480px;
+                margin: 0 auto;
+            }
+            header {
+                max-width: 480px;
+                height: 100px;
+            }
+            .content {
+                max-width: 480px;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                margin: auto;
+            }
+            body {
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+            .featured {
+                flex-direction: column;
+                max-width: 480px;
+                margin: 0 auto;
+            }
+            nav > a.logo {
+                background-image: url("Logo.png");
+                transform: scale(0.5, 0.5);
+                left: 5%;
+                top: 20%;
+                position: absolute;
+            }
+            .box {
+                background-color: #4e4e4f;
+                position: absolute;
+                left: 149px;
+                width: 184px;
+                top: 27px;
+                margin: 0;
+                padding: 0;
+            }
+            .box h1 {
+                text-align: center;
+                font-size: small;
+            }
+            nav {
+                width: 68px;
+                height: 20px;
+            }
+            nav > a {
+                width: 68px;
+                height: 20px;
+                transition: 250ms;
+            }
+            nav > a.kontakt {
+                background-image: url("Kontakt oss omriss.png");
+                position: absolute;
+                transform: scale(0.5, 0.5);
+                left: 178px;
+                top: 67px;
+            }
+            nav > a.kontakt:hover {
+                background-image:url("Kontakt oss fylt.png");
+                position: absolute;
+                transform: scale(0.5, 0.5);
+                left: 178px;
+                top: 67px;
+            }
+            nav > a.produkter {
+                background-image: url("Produkter omriss.png");
+                transform: scale(0.5, 0.5);
+                left: 118px;
+                top: 67px;
+            }
+            nav > a.produkter:hover {
+                background-image: url("Produkter fylt.png");
+                position: absolute;
+                transform: scale(0.5, 0.5);
+                left: 118px;
+                top: 67px;
+            }
+            nav > a.støtte {
+                background-image: url("Teknisk støtte omriss.png");
+                position: absolute;
+                transform: scale(0.5, 0.5);
+                left: 238px;
+                top: 67px;
+            }
+            nav > a.støtte:hover {
+                background-image: url("Teknisk støtte fylt.png");
+                position: absolute;
+                transform: scale(0.5, 0.5);
+                left: 238px;
+                top: 67px;
+            }
+
+            .featuredbox1 {
+                width: 480px;
+                height: 500px;
+                background-color: #4e4e4f;
+                border: #5488c7;
+                float: top;
+
+            }
+            .featuredbox2 {
+                width: 480px;
+                height: 500px;
+                background-color: #333333;
+                border: #5488c7;
+                float: top;
+            }
+            .featuredbox3 {
+                width: 480px;
+                height: 500px;
+                background-color: #4e4e4f;
+                border: #5488c7;
+                float: left;
+            }
+            .featuredbox2 h3 {
+                margin-bottom: 20px;
+            }
+            .featuredbox3 h3{
+                margin-bottom: 60px;
+            }
+            .featured h2 {
+                color: white;
+                text-align: center;
+                padding-top: 20px;
+            }
+            .featured h3 {
+                padding: 20px;
+                color: white;
+            }
+            nav > a.sonos {
+                background-image: url("sonos200.png");
+                height: 200px;
+                width: 200px;
+                position: absolute;
+                left: 80px;
+                z-index: 0;
+            }
+            nav > a.yamaha {
+                background-image: url("yamaha.png");
+                height: 200px;
+                width: 200px;
+                position: absolute;
+                left: 80px;
+                z-index: 0;
+            }
+            nav > a.bang {
+                background-image: url("bang olufsen.png");
+                height: 200px;
+                width: 200px;
+                position: absolute;
+                left: 80px;
+                z-index: 0;
+
+            }
+            .parallax-bg {
+                background: url("Musikkstudio.jpg") ;
+                transition: all 0.1s ease;
+                background-attachment: local;
+                background-position: 0;
+                background-size: 150%;
+                height: 300px;
+                padding: 0;
+                margin-top: 100px;
+                float: right;
+            }
+            .parallax-bg2 {
+                padding: 0;
+                max-width: 480px;
+                background: url("Konsert.png") 0;
+                background-size: cover;
+                transition: all 0.1s ease;
+                background-attachment: local;
+                height: 400px;
+                background-size: 300%;
+                background-position: 0;
+            }
+            .garanti {
+                color: white;
+                font-size: 19px;
+                font-weight: 700;
+                text-align: center;
+                max-width: 460px;
+                padding-top: 150px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+
+            <nav>
+                <a class="logo" href="Hjemmeside%20musikk.html"><img src="Logo.png"></a>
+            </nav>
+            <div class="box">
+                <h1>TrueSound</h1>
+            </div>
+            <nav>
+            <a class="produkter" href="produkter.html"></a>
+            <a class="kontakt" href="kontakt.html"></a>
+            <a class="støtte" href="støtte.html"></a>
+            </nav>
+
+        </header>
+
+        <main>
+            <div class="content">
+                <div class="parallax-bg">
+                    <div class="parallax-window" data-parallax="scroll" data-image-src="Musikkstudio.jpg"></div>
+                    <h1>Hi-Fi PRODUKTER</h1>
+                </div>
+
+                <div class="featured">
+                    <div class="featuredbox1">
+                        <h2>Sonos</h2>
+                        <h3>Sonos byr på en rekke høytallersystemer for hjemmebruk med høy kvalitet. Med dyp bass, klare høyfrekvente toner, og et brukergrensesnitt og teknologi som gjør at man kan koble hele huset inn i ett system gjør at disse høytallersystemene er bestselgere. Trykk på bildet under for mer informasjon.</h3>
+                        <nav>
+                            <a class="sonos" href="http://www.sonos.com/no-no/products/wireless-speakers" target="_blank"></a>
+                        </nav>
+                    </div>
+                    <div class="featuredbox2">
+                        <h2>Bang & Olufsen</h2>
+                        <h3>Bang & Olufsen er en dansk produsent som fokuserer på en kombinasjon av et stilrent design og klar lyd. Vi har et stort utvalg av ulike produkter, med alt fra toppmodeller til rimeligere men fortsatt veldig bra høytalere. Trykk på bildet under for mer informasjon.</h3>
+                        <nav>
+                            <a class="bang" href="http://www.bang-olufsen.com/en/collection"></a>
+                        </nav>
+                    </div>
+                    <div class="featuredbox3">
+                        <h2>Yamaha</h2>
+                        <h3>Yamaha er en av de aller største hi-fi leverandørene i verden. De tilbyr høykvalitets hi-fi systemer med svært lang livsstid og er et veldig kjent merke på grunn av dette. Trykk på bildet under for mer informasjon. </h3>
+                        <nav>
+                            <a class="yamaha" href="http://no.yamaha.com/no/products/audio-visual/hifi-systems/" target="_blank"></a>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+        <main>
+            <div class="content">
+                <div class="parallax-bg2">
+                    <div class="parallax-window" data-parallax="scroll" data-image-src="Konsert.jpg"></div>
+                    <p class="garanti">Vi tilbyr 100% fornøyd garanti. Som betyr at hvis du ikke er fornøyd med produktet du har blitt tilsendt, kan du få tilbake alle pengene ved retur av varen innenfor 1 måned, kvittering må medfølge.</p>
+                </div>
+                <div class="info">
+                    <div class="omoss"></div>
+                    <h1>Om oss</h1>
+                    <h2>Vi tilbyr en rekke produkter innenfor lyd. Vi kan skaffe nesten alle slags ulike Hi-Fi produkter gjennom bestillinger. Vi har også avtaler for rigging av høytallersystemer for større arrangementer som blant annet konserter eller utearrangementer. </h2>
+                </div>
+            </div>
+        </main>
+
+
+
+        <footer>
+            <div class="footer">
+                <a href="produkter.html">Produkter</a>
+                <a href="kontakt.html">Kontakt Oss</a>
+                <a href="støtte.html">Teknisk Støtte</a>
+                <h3>Elias Smiths Vei 5</h3>
+
+
+            </div>
+        </footer>
+
+
+
+
+    </div>
+
+
+    <script src="jquery-3.1.1.min.js"></script>
+    <script type="text/javascript">
+
+        (function() {
+
+            var documentEl = $(document),
+                    parallaxBg = $('div.parallax-bg');
+                    parallaxBg2 = $('div.parallax-bg2');
+
+            documentEl.on('scroll', function() {
+                var currScrollPos = documentEl.scrollTop();
+                parallaxBg.css('background-position', '0 ' + -currScrollPos/4 + 'px');
+                parallaxBg2.css('background-position', '0 ' + -currScrollPos/4 + 'px');
+            });
+
+
+
+        })();
+    </script>
+
+
+</body>
+</html>

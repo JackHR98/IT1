@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Kontakt Oss</title>
+
+
+    <style>
+
+        body {
+            background-color: #333333;
+        }
+        .container {
+            max-width: 970px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            height: 200px;
+            width: 970px;
+            text-align: center;
+            position: fixed;
+            background-color: #424142;
+            z-index: 1;
+
+        }
+
+        nav > a.logo {
+            width: 10%;
+            height: 25%;
+            padding: 0;
+            top: 20%;
+            position: absolute;
+            float: left;
+        }
+        .box {
+            height: 50%;
+            width: 378px;
+            background-color: #4e4e4f;
+            left: 298px;
+            position: absolute;
+            float: left;
+            top: 37px;
+        }
+        nav {
+            width: 126px;
+            height: 41px;
+        }
+        nav > a {
+            width: 126px;
+            height: 41px;
+            transition: 250ms;
+        }
+        nav > a.kontakt {
+            background-image: url("Kontakt oss omriss.png");
+            position: absolute;
+            width: 126px;
+            height:41px;
+            left: 424px;
+            top: 135px;
+        }
+        nav > a.kontakt:hover {
+            background-image:url("Kontakt oss fylt.png");
+            position: absolute;
+            width: 126px;
+            height:41px;
+            left: 424px;
+            top: 135px;
+        }
+        nav > a.produkter {
+            background-image: url("Produkter omriss.png");
+            position: absolute;
+            width: 126px;
+            height: 41px;
+            left: 298px;
+            top: 135px;
+        }
+        nav > a.produkter:hover {
+            background-image: url("Produkter fylt.png");
+            position: absolute;
+            width: 126px;
+            height: 41px;
+            left: 298px;
+            top: 135px;
+        }
+        nav > a.støtte {
+            background-image: url("Teknisk støtte omriss.png");
+            position: absolute;
+            width: 126px;
+            height: 41px;
+            left: 550px;
+            top: 135px;
+        }
+        nav > a.støtte:hover {
+            background-image: url("Teknisk støtte fylt.png");
+            position: absolute;
+            width: 126px;
+            height: 41px;
+            left: 550px;
+            top: 135px;
+        }
+        h1 {
+            color: #5588c7;
+            padding: 30px;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .boks{
+            height: 100px;
+            max-width: 970px;
+            color: #4e4e4f;
+            margin-top: 200px;
+        }
+        .boks h1 {
+            text-align: center;
+            color: white;
+        }
+        .kontor {
+            max-width: 970px;
+            width: 100%;
+            height: auto;
+        }
+        .kart{
+            max-width: 970px;
+        }
+        .info {
+            height: 400px;
+            color: #414042;
+        }
+        .info h1{
+            color: white;
+            text-align: center;
+        }
+        .info h2{
+            color: white;
+        }
+        .info a{
+            font-size: larger;
+        }
+        .info h3{
+            color: white;
+        }
+        .footer {
+            background-color: #333333;
+            width: 970px;
+            height: 200px;
+            color: white;
+        }
+        a:link {
+            color: #5588c7;
+        }
+        a:hover {
+            color: white;
+        }
+        a:visited {
+            color: darkgrey;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+
+
+
+        @media only screen and (max-width : 480px) {
+            main {
+                max-width: 480px;
+                margin: 0 auto;
+            }
+
+            header {
+                max-width: 480px;
+                height: 100px;
+            }
+
+            body {
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+
+            nav > a.logo {
+                background-image: url("Logo.png");
+                transform: scale(0.5, 0.5);
+                left: 5%;
+                top: 20%;
+                position: absolute;
+            }
+
+            .box {
+                background-color: #4e4e4f;
+                position: absolute;
+                left: 149px;
+                width: 184px;
+                top: 27px;
+                margin: 0;
+                padding: 0;
+                height: 50px;
+            }
+
+            .box h1 {
+                text-align: center;
+                font-size: small;
+                max-width: 480px;
+            }
+
+            nav {
+                width: 68px;
+                height: 20px;
+            }
+
+            nav > a {
+                width: 68px;
+                height: 20px;
+                transition: 250ms;
+            }
+
+            nav > a.kontakt {
+                background-image: url("Kontakt oss omriss.png");
+                position: absolute;
+                transform: scale(0.5, 0.5);
+                left: 178px;
+                top: 67px;
+            }
+
+            nav > a.kontakt:hover {
+                background-image: url("Kontakt oss fylt.png");
+                position: absolute;
+                transform: scale(0.5, 0.5);
+                left: 178px;
+                top: 67px;
+            }
+
+            nav > a.produkter {
+                background-image: url("Produkter omriss.png");
+                transform: scale(0.5, 0.5);
+                left: 118px;
+                top: 67px;
+            }
+
+            nav > a.produkter:hover {
+                background-image: url("Produkter fylt.png");
+                position: absolute;
+                transform: scale(0.5, 0.5);
+                left: 118px;
+                top: 67px;
+            }
+
+            nav > a.støtte {
+                background-image: url("Teknisk støtte omriss.png");
+                position: absolute;
+                transform: scale(0.5, 0.5);
+                left: 238px;
+                top: 67px;
+            }
+
+            nav > a.støtte:hover {
+                background-image: url("Teknisk støtte fylt.png");
+                position: absolute;
+                transform: scale(0.5, 0.5);
+                left: 238px;
+                top: 67px;
+            }
+            .info {
+                width: 480px;
+            }
+            .info h2 {
+                font-size: medium;
+            }
+            .info h3 {
+                font-size: medium;
+            }
+            .info a {
+                font-size: medium;
+            }
+            .boks {
+                height: 100px;
+                margin-top: 100px;
+            }
+            .kontor img {
+                width: 480px;
+            }
+            .boks {
+                font-size: medium;
+                height: 50px;
+            }
+            .boks h1 {
+                padding: 0;
+                padding-top: 5px;
+            }
+            .info {
+                margin-left: 10px;
+                margin-right: 10px;
+                width: 460px;
+            }
+
+        }
+
+
+
+
+
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+
+        <nav>
+            <a class="logo" href="Hjemmeside%20musikk.html"><img src="Logo.png"></a>
+        </nav>
+        <div class="box">
+            <h1>TrueSound</h1>
+        </div>
+        <nav>
+            <a class="produkter" href="produkter.html"></a>
+            <a class="kontakt" href="kontakt.html"></a>
+            <a class="støtte" href="støtte.html"></a>
+        </nav>
+
+    </header>
+
+    <div class="boks">
+        <h1>Kontakt Oss</h1>
+    </div>
+
+    <main>
+        <div class="kontor">
+            <img src="Sandvika%20vgs.png" class="kart">
+        </div>
+        <div class="info">
+            <h1>Vi holder til i sandvika!</h1>
+            <h2>Du kan ta kontakt med oss via mail, på telefon eller ved å komme innom showrommet.</h2>
+            <h2>Adressen vår og lenke til google maps finner du nedenfor.</h2>
+            <a href="https://www.google.no/maps?q=sandvika+vgs&rlz=1C1MSNA_enNO598NO598&ion=1&espv=2&bav=on.2,or.r_cp.&bvm=bv.142059868,d.bGg&biw=1745&bih=850&dpr=1.1&um=1&ie=UTF-8&sa=X&ved=0ahUKEwjT0P3Sn63RAhXM1SwKHfirCJsQ_AUIBygC">Elias Smiths vei 15, 1337 Sandvika</a>
+            <h3>tlf:98869268</h3>
+            <h3>Mail: truesound@info.com</h3>
+        </div>
+
+    </main>
+    <footer>
+        <div class="footer">
+            <a href="produkter.html">Produkter</a>
+            <a href="kontakt.html">Kontakt Oss</a>
+            <a href="støtte.html">Teknisk Støtte</a>
+
+        </div>
+    </footer>
+
+ </div>
+
+<script src="jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+
+    (function() {
+
+        var documentEl = $(document),
+                parallaxBg = $('div.kontor');
+
+        documentEl.on('scroll', function() {
+            var currScrollPos = documentEl.scrollTop();
+            parallaxBg.css('background-position', '0 ' + -currScrollPos/4 + 'px');
+            parallaxBg2.css('background-position', '0 ' + -currScrollPos/4 + 'px');
+        });
+
+
+
+    })();
+</script>
+
+</body>
+</html>

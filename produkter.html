@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Produkter</title>
+
+    <style>
+        body {
+            background-color: #333333;
+        }
+        .container {
+            max-width: 970px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            height: 200px;
+            width: 970px;
+            text-align: center;
+            position: fixed;
+            background-color: #424142;
+            z-index: 1;
+
+        }
+
+        nav > a.logo {
+            width: 10%;
+            height: 25%;
+            padding: 0;
+            top: 20%;
+            position: absolute;
+            float: left;
+        }
+        .box {
+            height: 50%;
+            width: 378px;
+            background-color: #4e4e4f;
+            left: 298px;
+            position: absolute;
+            float: left;
+            top: 37px;
+        }
+        .box h1 {
+            text-align: center;
+        }
+        nav {
+            width: 126px;
+            height: 41px;
+        }
+        nav > a {
+            width: 126px;
+            height: 41px;
+            transition: 250ms;
+        }
+        nav > a.kontakt {
+            background-image: url("Kontakt oss omriss.png");
+            position: absolute;
+            width: 126px;
+            height:41px;
+            left: 424px;
+            top: 135px;
+        }
+        nav > a.kontakt:hover {
+            background-image:url("Kontakt oss fylt.png");
+            position: absolute;
+            width: 126px;
+            height:41px;
+            left: 424px;
+            top: 135px;
+        }
+        nav > a.produkter {
+            background-image: url("Produkter omriss.png");
+            position: absolute;
+            width: 126px;
+            height: 41px;
+            left: 298px;
+            top: 135px;
+        }
+        nav > a.produkter:hover {
+            background-image: url("Produkter fylt.png");
+            position: absolute;
+            width: 126px;
+            height: 41px;
+            left: 298px;
+            top: 135px;
+        }
+        nav > a.støtte {
+            background-image: url("Teknisk støtte omriss.png");
+            position: absolute;
+            width: 126px;
+            height: 41px;
+            left: 550px;
+            top: 135px;
+        }
+        nav > a.støtte:hover {
+            background-image: url("Teknisk støtte fylt.png");
+            position: absolute;
+            width: 126px;
+            height: 41px;
+            left: 550px;
+            top: 135px;
+        }
+        h1 {
+            color: #5588c7;
+            padding: 30px;
+            text-align: center;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #slides {
+            display:none;
+            margin-top: 200px;
+            z-index: 0;
+            padding: 0;
+        }
+        .featuredbox1 {
+            width: 323px;
+            height: 600px;
+            background-color: #4e4e4f;
+            border: #5488c7;
+            float: left;
+
+        }
+        .featuredbox2 {
+            width: 323px;
+            height: 600px;
+            background-color: #333333;
+            border: #5488c7;
+            float: left;
+        }
+        .featuredbox3 {
+            width: 323px;
+            height: 600px;
+            background-color: #4e4e4f;
+            border: #5488c7;
+            float: left;
+        }
+        .boks {
+            background-color: #5488c7;
+            height: 50px;
+        }
+        .boks h1 {
+            text-align: center;
+            color: white;
+            margin: 0 auto;
+            padding: 0;
+        }
+        .featured {
+            margin: 0 auto;
+        }
+        .featured h1 {
+            color: white;
+        }
+        .featured h2 {
+            color: white;
+            padding: 10px;
+        }
+        .featured h3 {
+            color: white;
+            padding: 10px;
+        }
+        .featured img {
+            margin: 0 auto;
+            padding-left: 19%;
+        }
+        .footer h3 {
+            color: white;
+            font-size: medium;
+            text-align: center;
+        }
+        .footer {
+            text-align: center;
+        }
+
+        @media only screen and (max-width : 480px) {
+            main {
+                max-width: 480px;
+                margin: 0 auto;
+            }
+            #slides {
+                display:none;
+                margin-top: 100px;
+                z-index: 0;
+                padding: 0;
+            }
+            header {
+                max-width: 480px;
+                height: 100px;
+            }
+            body {
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+            .featured {
+                flex-direction: column;
+                max-width: 480px;
+                margin: 0 auto;
+            }
+            nav > a.logo {
+                background-image: url("Logo.png");
+                transform: scale(0.5, 0.5);
+                left: 5%;
+                top: 20%;
+                position: absolute;
+            }
+            .box {
+                background-color: #4e4e4f;
+                position: absolute;
+                left: 149px;
+                width: 184px;
+                top: 27px;
+                margin: 0;
+                padding: 0;
+            }
+            .box h1 {
+                text-align: center;
+                font-size: small;
+            }
+            nav {
+                width: 68px;
+                height: 20px;
+            }
+            nav > a {
+                width: 68px;
+                height: 20px;
+                transition: 250ms;
+            }
+            nav > a.kontakt {
+                background-image: url("Kontakt oss omriss.png");
+                position: absolute;
+                transform: scale(0.5, 0.5);
+                left: 178px;
+                top: 67px;
+            }
+            nav > a.kontakt:hover {
+                background-image:url("Kontakt oss fylt.png");
+                position: absolute;
+                transform: scale(0.5, 0.5);
+                left: 178px;
+                top: 67px;
+            }
+            nav > a.produkter {
+                background-image: url("Produkter omriss.png");
+                transform: scale(0.5, 0.5);
+                left: 118px;
+                top: 67px;
+            }
+            nav > a.produkter:hover {
+                background-image: url("Produkter fylt.png");
+                position: absolute;
+                transform: scale(0.5, 0.5);
+                left: 118px;
+                top: 67px;
+            }
+            nav > a.støtte {
+                background-image: url("Teknisk støtte omriss.png");
+                position: absolute;
+                transform: scale(0.5, 0.5);
+                left: 238px;
+                top: 67px;
+            }
+            nav > a.støtte:hover {
+                background-image: url("Teknisk støtte fylt.png");
+                position: absolute;
+                transform: scale(0.5, 0.5);
+                left: 238px;
+                top: 67px;
+            }
+
+            .featuredbox1 {
+                width: 480px;
+                height: 500px;
+                background-color: #4e4e4f;
+                border: #5488c7;
+                float: top;
+
+            }
+            .featuredbox2 {
+                width: 480px;
+                height: 500px;
+                background-color: #333333;
+                border: #5488c7;
+                float: top;
+            }
+            .featuredbox3 {
+                width: 480px;
+                height: 500px;
+                background-color: #4e4e4f;
+                border: #5488c7;
+                float: left;
+            }
+
+            .featured h2 {
+                color: white;
+                text-align: center;
+                padding-top: 20px;
+            }
+            .featured h3 {
+                padding: 20px;
+                color: white;
+            }
+            .featured img {
+                margin: 0 auto;
+                padding-left: 29%;
+            }
+
+
+
+        }
+    </style>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="jquery.slides.min.js"></script>
+
+    <script>
+        $(function(){
+            $("#slides").slidesjs({
+                width: 970,
+                height: 398,
+                navigation: {
+                    active: false
+                },
+                pagination: {
+                    active: false
+                },
+                play: {
+                    active:false,
+                    effect:"slide",
+                    interval: 5000,
+                    auto: true
+                }
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+
+        <nav>
+            <a class="logo" href="Hjemmeside%20musikk.html"><img src="Logo.png"></a>
+        </nav>
+        <div class="box">
+            <h1>TrueSound</h1>
+        </div>
+        <nav>
+            <a class="produkter" href="produkter.html"></a>
+            <a class="kontakt" href="kontakt.html"></a>
+            <a class="støtte" href="støtte.html"></a>
+        </nav>
+
+    </header>
+
+
+
+    <div id="slides">
+        <img src="Bang%20olufsen%20slide.jpg">
+        <img src="Yamaha%20piano.png">
+        <img src="sonos%20system.png">
+    </div>
+
+    <div class="boks">
+        <h1>Sonos</h1>
+    </div>
+
+    <div class="featured">
+        <div class="featuredbox1">
+            <h1>Play:1</h1>
+            <h3>Play:1 er en liten, men kraftig bærbar høytaller som er lett å ta med seg, og passer perfekt til den som er på farten.</h3>
+            <img src="play1.png" height="200px" width="200px">
+            <h2>Pris: 1200kr</h2>
+        </div>
+        <div class="featuredbox2">
+            <h1>Play:3</h1>
+            <h3>Play:3 er en større versjon av den lettere Play:1, den har bedre lyd, større batterikapasitet og er fortsatt enkel å ta seg med rundt.</h3>
+            <img src="play3.png" height="200px" width="200px">
+            <h2>Pris: 2300kr</h2>
+        </div>
+        <div class="featuredbox3">
+            <h1>Play:5</h1>
+            <h3>Play:5 tilbyr noe av den beste lyden du kan få i forhold til størrelsen. Med høy batterikapasitet får du mye god lyd ut av den før batteriet tømmes.</h3>
+            <img src="play5.png" height="200px" width="200px">
+            <h2>Pris: 3400kr</h2>
+        </div>
+     </div>
+
+        <div class="boks">
+            <h1>Bang & Olufsen</h1>
+        </div>
+
+    <div class="featured">
+        <div class="featuredbox1">
+            <h1>Beolab 19</h1>
+            <h3>Beolab 19 er en liten høytaller som byr på veldig klar lyd. Den har et unikt design, og kan også kobles til mobilen via nett.</h3>
+            <img src="beolab%2019.jpg" width="200px" height="200px">
+            <h2>Pris: 3200kr</h2>
+        </div>
+        <div class="featuredbox2">
+            <h1>Beolab 20</h1>
+            <h3>Beolab 20 er en greit stor høytaller som er laget for å fylle hele rommet med lyd, uansett hvor den står. Et topp alternativ.</h3>
+            <img src="beolab%2020.jpg" height="200px" width="200px">
+            <h2>Pris: 8400kr</h2>
+        </div>
+        <div class="featuredbox3">
+            <h1>Beosound 35</h1>
+            <h3>Beosound 35 er en lydplanke som passer perfekt foran tven. Med dyp bass og veldig klar lyd er dette en av de beste alternativene på markedet. </h3>
+            <img src="beosound%2035.jpg" height="200px" width="200px">
+            <h2>Pris: 12000kr</h2>
+        </div>
+    </div>
+
+    <div class="boks">
+        <h1>Yamaha</h1>
+    </div>
+
+    <div class="featured">
+        <div class="featuredbox1">
+            <h1>NS F901</h1>
+            <h3>NS F901 høytallerene passer bra til hjemmelydsystemer. De er bygget for å levere god lyd, og har en veldig lang levetid.</h3>
+            <img src="yamaha%20nsf901.jpg" width="200px" height="200px">
+            <h2>Pris: 14000kr</h2>
+        </div>
+        <div class="featuredbox2">
+            <h1>NS F150</h1>
+            <h3>NS F150 er høytalleren som passer perfekt til film eller musikk, og leverer naturlig lyd og kraftig og dyp bass. </h3>
+            <img src="yamaha%20nsf150.jpg" width="200px" height="200px">
+            <h2>Pris: 9000kr</h2>
+        </div>
+        <div class="featuredbox3">
+            <h1>NS F310</h1>
+            <h3>NS F310 er en toppkvalitets hjemmehøytaller som leverer noe av den klareste lyden på markedet sammen med veldig kraftig bass.</h3>
+            <img src="yamaha%20nsf310.jpg" width="200px" height="200px">
+            <h2>Pris: 2100kr</h2>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <a href="produkter.html">Produkter</a>
+            <a href="kontakt.html">Kontakt Oss</a>
+            <a href="støtte.html">Teknisk Støtte</a>
+            <h3>Elias Smiths Vei 5</h3>
+
+
+        </div>
+    </footer>
+
+</div>
+
+</body>
+</html>
